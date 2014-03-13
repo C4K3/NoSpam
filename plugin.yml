@@ -1,0 +1,5 @@
+name: NoSpam
+main: org.c4k3.NoSpam.NoSpam
+version: 2.1 #Bukkit 1.7.2 B1869
+author: C4K3.org
+description: Automutes noisy people
