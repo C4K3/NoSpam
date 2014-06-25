@@ -17,7 +17,7 @@ public class ChatListener implements Listener {
 		
 		Player player = event.getPlayer();
 		
-		boolean cancel = Handler.isSpamming(player); // The Handler class is the one that really checks if people are spamming
+		boolean cancel = SpamHandler.isSpamming(player); // The Handler class is the one that really checks if people are spamming
 				
 		if ( cancel ) event.setCancelled(true);
 				

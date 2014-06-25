@@ -11,6 +11,9 @@ public class NoSpam extends JavaPlugin {
 		instance = this;
 		new ChatListener(this);
 		new CommandListener(this);
+		getCommand("mute").setExecutor(new MuteCommand());
+		getCommand("unmute").setExecutor(new UnmuteCommand());
+		getCommand("amimuted").setExecutor(new AmIMutedCommand());
 	}
 	
 	@Override

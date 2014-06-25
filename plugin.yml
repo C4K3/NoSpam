@@ -1,5 +1,15 @@
 name: NoSpam
 main: org.c4k3.NoSpam.NoSpam
-version: 2.1 #Bukkit 1.7.2 B1869
+version: 2.2 #Bukkit 1.7.2 B1869
 author: C4K3.org
 description: Automutes noisy people
+commands:
+  mute:
+    description: Mutes a player
+    usage: Error. Please report at http://simpvp.net/forum
+  unmute:
+    description: Unmutes a player
+    usage: Error. Please report at http://simpvp.net/forum
+  amimuted:
+    description: Let's players know if they're muted or not
+    usage: Error. Please report at http://simpvp.net/forum

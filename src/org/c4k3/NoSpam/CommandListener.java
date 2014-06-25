@@ -22,7 +22,7 @@ public class CommandListener implements Listener {
 		/* Important: The spaces afterwards are necessary. Otherwise we get something like this being activated on /world because of /w */
 		if ( message.startsWith("/tell ") || message.startsWith("/me ") || message.startsWith("/msg ") || message.startsWith("/w ") ) {
 			
-			boolean cancel = Handler.isSpamming(player); // The Handler class checks if it's spam
+			boolean cancel = SpamHandler.isSpamming(player); // The Handler class checks if it's spam
 			
 			if ( cancel ) event.setCancelled(true);
 			

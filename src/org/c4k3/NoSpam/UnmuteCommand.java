@@ -1,0 +1,53 @@
+package org.c4k3.NoSpam;
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class UnmuteCommand implements CommandExecutor {
+	
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
+		Player player = null;
+		if (sender instanceof Player){
+			player = (Player) sender;
+		}
+		
+		/* Only console and OPs are allowed to use this command */
+		if ( player != null && !player.isOp() ) {
+			player.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+			return true;
+		}
+		
+		/* There should always be just one argument */
+		if ( args.length != 1 ) {
+			if ( player == null ) NoSpam.instance.getLogger().info("Incorrect amount of arguments.");
+			else player.sendMessage(ChatColor.RED + "Incorrect amount of arguments.");
+			return true;
+		}
+		
+		String tPlayer;
+		
+		try {
+			tPlayer = NoSpam.instance.getServer().getPlayer(args[0]).getName();
+		} catch(NullPointerException e) {
+			/* This will happen if bukkit is not able to get player, but then we just assume
+			 * that player was an exactly named offline player */
+			tPlayer = args[0];
+		}
+		
+		if ( SpamHandler.unmutePlayer(tPlayer) ) {
+			if ( player == null ) NoSpam.instance.getLogger().info(tPlayer + " was unmuted.");
+			else player.sendMessage(ChatColor.AQUA + tPlayer + " was unmuted.");
+		} else {
+			if ( player == null ) NoSpam.instance.getLogger().info("Unable to find player \"" + tPlayer + "\".");
+			else player.sendMessage(ChatColor.RED + "Unable to find player \"" + tPlayer + "\".");
+		}
+		
+		return true;
+		
+	}
+
+}
