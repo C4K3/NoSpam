@@ -76,12 +76,12 @@ public class SpamHandler {
 			mutePlayer(sPlayer, 1);
 
 			/* Tell console */
-			NoSpam.instance.getLogger().info(sPlayer + " has been muted for spam " + shortPeriodCount + " " + medPeriodCount + " " + longPeriodCount);
+			NoSpam.instance.getLogger().info(sPlayer + " has been automuted for spam " + shortPeriodCount + " " + medPeriodCount + " " + longPeriodCount);
 
 			/* Tell all admins that this player has been muted */
-			for ( Player tPlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
+			for ( Player onlinePlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
 
-				if ( tPlayer.isOp() ) tPlayer.sendMessage("[" + ChatColor.GOLD + "NoSpam" + ChatColor.RESET + "] Automuting " + sPlayer + " for 60 seconds.");
+				if ( onlinePlayer.isOp() ) onlinePlayer.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + "[NoSpam: Automuting " + sPlayer + " for 1 minute]");
 
 			}
 

@@ -39,11 +39,18 @@ public class UnmuteCommand implements CommandExecutor {
 		}
 		
 		if ( SpamHandler.unmutePlayer(tPlayer) ) {
-			if ( player == null ) NoSpam.instance.getLogger().info(tPlayer + " was unmuted.");
-			else player.sendMessage(ChatColor.AQUA + tPlayer + " was unmuted.");
+			NoSpam.instance.getLogger().info(tPlayer + " was unmuted by " + sender.getName() + ".");
+			if ( player != null )player.sendMessage(ChatColor.AQUA + tPlayer + " was unmuted.");
+			
+			for ( Player onlinePlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
+				
+				if ( onlinePlayer.isOp() && onlinePlayer != player ) onlinePlayer.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Unmuted " + tPlayer + "]");
+				
+			}
+			
 		} else {
-			if ( player == null ) NoSpam.instance.getLogger().info("Unable to find player \"" + tPlayer + "\".");
-			else player.sendMessage(ChatColor.RED + "Unable to find player \"" + tPlayer + "\".");
+			if ( player == null ) NoSpam.instance.getLogger().info("Unable to unmute \"" + tPlayer + "\", no such muted player.");
+			else player.sendMessage(ChatColor.RED + "Unable to unmute \"" + tPlayer + "\", no such muted player.");
 		}
 		
 		return true;

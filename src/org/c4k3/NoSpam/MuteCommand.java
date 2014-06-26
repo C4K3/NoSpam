@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 
 public class MuteCommand implements CommandExecutor {
 	
+	String message;
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
 		Player player = null;
@@ -48,8 +50,17 @@ public class MuteCommand implements CommandExecutor {
 		
 		SpamHandler.mutePlayer(tPlayer, muteMinutes);
 		
-		if ( player == null ) NoSpam.instance.getLogger().info(tPlayer + " was muted for " + muteMinutes + " minutes.");
-		else player.sendMessage(ChatColor.AQUA + tPlayer + " was muted for " + muteMinutes + " minutes.");
+		NoSpam.instance.getLogger().info(tPlayer + " was muted for " + muteMinutes + " minutes by " + sender.getName() + ".");
+		if ( player != null ) player.sendMessage(ChatColor.AQUA + tPlayer + " was muted for " + muteMinutes + " minutes.");
+				
+		if ( muteMinutes == 1 ) message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer + " for " + muteMinutes + " minute]";
+		else message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer + " for " + muteMinutes + " minutes]";
+		
+		for ( Player onlinePlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
+			
+			if ( onlinePlayer.isOp() && onlinePlayer != player ) onlinePlayer.sendMessage(message);
+			
+		}
 		
 		return true;
 		

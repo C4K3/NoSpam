@@ -22,8 +22,8 @@ public class AmIMutedCommand implements CommandExecutor {
 		
 		String sPlayer = player.getName();
 		
-		if ( SpamHandler.isMuted(sPlayer) ) sender.sendMessage("You are muted.");
-		else sender.sendMessage("You are not muted.");
+		if ( SpamHandler.isMuted(sPlayer) ) sender.sendMessage("You are.");
+		else sender.sendMessage("You are not.");
 		
 		return true;
 		
