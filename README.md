@@ -12,9 +12,9 @@ Commands
 ```
 /unmute <player>
 ```
-- Unmutes <player. Can only be used by OPs.
+- Unmutes <player>. Can only be used by OPs.
 
 ```
 /amimuted
 ```
-- Tells you whether you're muted or not, can be used by all players.
+- Tells you whether you're muted or not. Can be used by all players.

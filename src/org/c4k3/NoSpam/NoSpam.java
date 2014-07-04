@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class NoSpam extends JavaPlugin {
 
 	public static JavaPlugin instance;
-	
+
 	@Override
 	public void onEnable(){
 		instance = this;
@@ -15,11 +15,11 @@ public class NoSpam extends JavaPlugin {
 		getCommand("unmute").setExecutor(new UnmuteCommand());
 		getCommand("amimuted").setExecutor(new AmIMutedCommand());
 	}
-	
+
 	@Override
 	public void onDisable(){
 		//onDisable
-		
+
 	}
-	
+
 }
