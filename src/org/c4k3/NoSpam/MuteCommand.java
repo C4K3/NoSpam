@@ -58,8 +58,8 @@ public class MuteCommand implements CommandExecutor {
 		NoSpam.instance.getLogger().info(tPlayer.getName() + " was muted for " + muteMinutes + " minutes by " + sender.getName() + ".");
 		if ( player != null ) player.sendMessage(ChatColor.AQUA + tPlayer.getName() + " was muted for " + muteMinutes + " minutes.");
 
-		if ( muteMinutes == 1 ) message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer + " for " + muteMinutes + " minute]";
-		else message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer + " for " + muteMinutes + " minutes]";
+		if ( muteMinutes == 1 ) message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer.getName() + " for " + muteMinutes + " minute]";
+		else message = ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Muted " + tPlayer.getName() + " for " + muteMinutes + " minutes]";
 
 		for ( Player onlinePlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
 
