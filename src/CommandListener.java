@@ -30,8 +30,9 @@ public class CommandListener implements Listener {
 
 			if ( cancel ) event.setCancelled(true);
 
-		}
+				}
 
 	}
 
 }
+
