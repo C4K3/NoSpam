@@ -1,4 +1,4 @@
-package org.c4k3.NoSpam;
+package net.simpvp.NoSpam;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

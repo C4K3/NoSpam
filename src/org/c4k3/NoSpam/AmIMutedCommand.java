@@ -1,4 +1,4 @@
-package org.c4k3.NoSpam;
+package net.simpvp.NoSpam;
 
 import java.util.UUID;
 

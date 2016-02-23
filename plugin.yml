@@ -1,5 +1,5 @@
 name: NoSpam
-main: org.c4k3.NoSpam.NoSpam
+main: net.simpvp.NoSpam.NoSpam
 version: 2.3 #1.7.9 Bukkit 1938
 author: C4K3.org
 description: Automutes noisy people
