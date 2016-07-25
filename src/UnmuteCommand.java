@@ -49,7 +49,7 @@ public class UnmuteCommand implements CommandExecutor {
 
 			for ( Player onlinePlayer : NoSpam.instance.getServer().getOnlinePlayers() ) {
 
-				if ( onlinePlayer.isOp() && onlinePlayer != player ) onlinePlayer.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Unmuted " + tPlayer + "]");
+				if ( onlinePlayer.isOp() && onlinePlayer != player ) onlinePlayer.sendMessage(ChatColor.GRAY + "" + ChatColor.ITALIC + "[" + sender.getName() + ": Unmuted " + tPlayer.getName() + "]");
 
 			}
 
