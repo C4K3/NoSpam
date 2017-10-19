@@ -69,7 +69,7 @@ public class SpamHandler {
 		}
 
 		/* If the count in the respective timeframe is greater than entered, player is spamming */
-		if ( shortPeriodCount > 1 || medPeriodCount > 2 || longPeriodCount > 6 ) {
+		if ( shortPeriodCount > 2 || medPeriodCount > 3 || longPeriodCount > 7 ) {
 
 			/* Remove the player's entry in hashTimes, as the player is now muted the chat timestamps are now entirely irrelevant */
 			hashTimes.remove(uuid);
