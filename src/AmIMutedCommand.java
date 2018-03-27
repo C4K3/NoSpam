@@ -24,8 +24,8 @@ public class AmIMutedCommand implements CommandExecutor {
 
 		UUID uuid = player.getUniqueId();
 
-		if ( SpamHandler.isMuted(uuid) ) sender.sendMessage("You are.");
-		else sender.sendMessage("You are not.");
+		if ( SpamHandler.isMuted(uuid) ) sender.sendMessage("Yes.");
+		else sender.sendMessage("No.");
 
 		return true;
 
