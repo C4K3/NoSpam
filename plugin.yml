@@ -1,6 +1,7 @@
 name: NoSpam
 main: net.simpvp.NoSpam.NoSpam
 version: 3
+api-version: 1.13
 author: C4K3.org
 description: Automutes noisy people
 commands:
