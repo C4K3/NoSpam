@@ -17,20 +17,21 @@ public class CommandListener implements Listener {
 
 		Player player = event.getPlayer();
 
-		String message = event.getMessage();
+		String message = event.getMessage().toLowerCase();
 
 		/* Important: The spaces afterwards are necessary. Otherwise we get something like this being activated on /world because of /w */
 		if (message.startsWith("/tell ")
 				|| message.startsWith("/me ")
 				|| message.startsWith("/msg ")
 				|| message.startsWith("/w ")
-				|| message.startsWith("/op ")) {
+				|| message.startsWith("/op ")
+				|| message.equals("/op")) {
 
 			boolean cancel = SpamHandler.isSpamming(player); // The Handler class checks if it's spam
 
 			if ( cancel ) event.setCancelled(true);
 
-				}
+		}
 
 	}
 
