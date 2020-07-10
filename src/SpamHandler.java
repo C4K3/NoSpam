@@ -25,8 +25,6 @@ public class SpamHandler {
 	 * If message should be allowed through, return false.*/
 	static boolean isSpamming(Player player) {
 
-		if ( player.isOp() ) return false; // OPs can spam all they want
-
 		UUID uuid = player.getUniqueId();
 		String sPlayer = player.getName();
 
