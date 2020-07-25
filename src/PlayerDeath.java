@@ -27,6 +27,7 @@ public class PlayerDeath implements Listener {
 
 		boolean cancel = SpamHandler.isSpamming(player);
 		if (cancel) {
+			NoSpam.instance.getLogger().info(event.getDeathMessage());
 			event.setDeathMessage(null);
 		}
 	}
