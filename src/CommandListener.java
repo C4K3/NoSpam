@@ -25,6 +25,8 @@ public class CommandListener implements Listener {
 				|| message.startsWith("/msg ")
 				|| message.startsWith("/w ")
 				|| message.startsWith("/op ")
+				|| message.startsWith("/r ")
+				|| message.startsWith("/m ")
 				|| message.equals("/op")) {
 
 			boolean cancel = SpamHandler.isSpamming(player); // The Handler class checks if it's spam
